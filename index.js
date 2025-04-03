@@ -7,7 +7,7 @@ import { productRouter } from "./router/product.router.js";
 import cors from "cors"
 import multer from "multer";
 import { Product } from "./models/product.model.js";
-import connectCloudinary from "./Cloudinary/cloudinary.js";
+import connectCloudinary from "../server/cloudinary/cloudinary.js"
 
 
 const app = express();
