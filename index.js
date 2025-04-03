@@ -79,7 +79,7 @@ app.use("/api/admin", AdminRouter);
 
 // })
 
-const PORT = process.env.PORT || 5000;  // Use Railway's port or fallback to 5000 for local dev
+const PORT = process.env.PORT || 8080;  // Use Railway's port or fallback to 5000 for local dev
 app.listen(PORT, () => {
     console.log(`Server is Running at ${PORT}`);
 });
