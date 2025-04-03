@@ -27,6 +27,10 @@ dotenv.config({
 })
 connectDb()
 connectCloudinary()
+app.get("/", (req, res) => {
+    res.send("Server is Running!");
+});
+
 
 app.use("/api/auth", router);
 app.use("/api/product",productRouter)
@@ -75,7 +79,7 @@ app.use("/api/admin", AdminRouter);
 
 // })
 
-app.listen(process.env.PORT,()=>{
-    console.log(`Server is Running at ${process.env.PORT}`);
-    
-})
+const PORT = process.env.PORT || 5000;  // Use Railway's port or fallback to 5000 for local dev
+app.listen(PORT, () => {
+    console.log(`Server is Running at ${PORT}`);
+});
