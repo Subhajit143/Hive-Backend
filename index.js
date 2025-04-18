@@ -36,50 +36,8 @@ app.use("/api/auth", router);
 app.use("/api/product",productRouter)
 app.use("/api/admin", AdminRouter);
 
-// const storage=multer.diskStorage({
-//     destination: function(req,file,cb){
-//         cb(null,'./uploads');
-//     },
-//     filename:function(req,file,cb){
-//         cb(null,Date.now()+"-"+file.originalname);
-//     }
 
-// })
-// const upload=multer({storage})
-// app.use('/uploads', express.static('uploads'));
-// app.post("/api/admin/addProduct",upload.single("image"),async(req,res)=>{
-//     try {
-//          // Get product details from req.body
-         
-        
-//         const newProduct =  new Product({
-//             name : req.body.name,
-//             description : req.body.description,
-//             price : req.body.price,
-//             imageUrl: req.file.path, // Save the file path to imageUrl
-//             category : req.body.category,
-//             stock : req.body.stock,
-            
-//           })
-          
-          
-//          // Save the product to the database
-//         await  newProduct.save();
-
-//         // Send success response
-//         res.status(200).send({ message: "Product added successfully" });
-          
-          
-//     } catch (error) {
-//         res.status(400).send({ "Error msg": error.message });
-//     }
-//      // Logging request body for debugging purposes
-//      console.log("The request body is =", req.body);
-    
-
-// })
-
-const PORT = process.env.PORT || 8080;  // Use Railway's port or fallback to 5000 for local dev
+const PORT = process.env.PORT;  // Use Railway's port or fallback to 5000 for local dev
 app.listen(PORT, () => {
     console.log(`Server is Running at ${PORT}`);
 });
